@@ -20,8 +20,6 @@ const ScreenshotApp: React.FC = () => {
 
     try {
       const accessKey = process.env.NEXT_PUBLIC_SCREENSHOTONE_API_KEY;
-
-
       const mobileResponse = await fetch(`https://api.screenshotone.com/take?access_key=${accessKey}&url=${encodeURIComponent(url)}&viewport_device=iphone_12_pro_max&full_page=true`);
       const desktopResponse = await fetch(`https://api.screenshotone.com/take?access_key=${accessKey}&url=${encodeURIComponent(url)}&viewport_width=1440&viewport_height=900`);
 
@@ -57,14 +55,15 @@ const ScreenshotApp: React.FC = () => {
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px', fontFamily: 'Arial, sans-serif' }}>
       <h1 style={{ marginBottom: '20px', fontFamily: 'Arial, sans-serif' }}>Screenshot App</h1>
       <form onSubmit={handleSubmit} style={{ marginBottom: '20px', textAlign: 'center', width: '100%', maxWidth: '400px' }}>
-        <input
-          type="text"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-          placeholder="Enter URL"
-          style={{ padding: '12px', marginRight: '10px', width: '100%', borderRadius: '5px', border: '2px solid #ccc' }}
-          required
-        />
+      <input
+  type="text"
+  value={url}
+  onChange={(e) => setUrl(e.target.value)}
+  placeholder="Enter URL (e.g., https://www.example.com)"
+  style={{ padding: '12px', marginRight: '10px', width: '100%', borderRadius: '5px', border: '2px solid #ccc' }}
+  required
+/>
+
         <div style={{ marginTop: '10px' }}>
           <button type="submit" disabled={loading} style={{ padding: '12px 20px', cursor: loading ? 'not-allowed' : 'pointer', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '5px', fontFamily: 'Arial, sans-serif' }}>
             {loading ? 'Generating...' : 'Generate Screenshots'}
