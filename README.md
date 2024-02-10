@@ -33,4 +33,20 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
+
+## Usage
+Enter the URL of the web page you want to capture in the input field provided.
+
+Click on the "Generate Screenshots" button to initiate the screenshot capture process.
+
+While the screenshots are being generated, a loading spinner will be displayed.
+
+Once the screenshots are generated, they will be displayed in both mobile and desktop views.
+
+## Additional Features
+
+Responsive Design: The Screenshot App is designed to be responsive, ensuring a seamless user experience across different devices.
+
+User-friendly Interface: The application provides a simple and intuitive interface for users to easily capture screenshots.
+
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
