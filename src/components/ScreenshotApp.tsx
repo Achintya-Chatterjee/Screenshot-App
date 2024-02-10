@@ -1,5 +1,4 @@
 import { useState } from 'react';
-const accessKey = process.env.SCREENSHOTONE_API_KEY;
 import styles from './ScreenshotApp.module.css'
 const ScreenshotApp: React.FC = () => {
   const [url, setUrl] = useState('');
@@ -20,7 +19,9 @@ const ScreenshotApp: React.FC = () => {
     }
 
     try {
-      const accessKey = screenshotone_API_Key;
+      const accessKey = process.env.NEXT_PUBLIC_SCREENSHOTONE_API_KEY;
+
+
       const mobileResponse = await fetch(`https://api.screenshotone.com/take?access_key=${accessKey}&url=${encodeURIComponent(url)}&viewport_device=iphone_12_pro_max&full_page=true`);
       const desktopResponse = await fetch(`https://api.screenshotone.com/take?access_key=${accessKey}&url=${encodeURIComponent(url)}&viewport_width=1440&viewport_height=900`);
 
