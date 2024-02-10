@@ -51,7 +51,7 @@ const ScreenshotApp: React.FC = () => {
     }
   };
 
-  return (
+  /*return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px', fontFamily: 'Arial, sans-serif' }}>
       <h1 style={{ marginBottom: '20px', fontFamily: 'Arial, sans-serif' }}>Screenshot App</h1>
       <form onSubmit={handleSubmit} style={{ marginBottom: '20px', textAlign: 'center', width: '100%', maxWidth: '400px' }}>
@@ -76,6 +76,37 @@ const ScreenshotApp: React.FC = () => {
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
         {desktopScreenshot && <img src={desktopScreenshot} alt="Desktop Screenshot" style={{ maxWidth: '100%', height: 'auto' }} />}
+      </div>
+    </div>
+  );
+  */
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+      <h1 style={{ marginBottom: '20px', fontFamily: 'Arial, sans-serif' }}>Screenshot App</h1>
+      <form onSubmit={handleSubmit} style={{ marginBottom: '20px', textAlign: 'center', width: '100%', maxWidth: '400px' }}>
+        <input
+          type="text"
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+          placeholder="Enter URL (e.g., https://www.example.com)"
+          style={{ padding: '12px', marginRight: '10px', width: '100%', borderRadius: '5px', border: '2px solid #ccc' }}
+          required
+        />
+        <div style={{ marginTop: '10px' }}>
+          <button type="submit" disabled={loading} style={{ padding: '12px 20px', cursor: loading ? 'not-allowed' : 'pointer', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '5px', fontFamily: 'Arial, sans-serif' }}>
+            {loading ? 'Generating...' : 'Generate Screenshots'}
+          </button>
+        </div>
+      </form>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+        <div style={{ display: 'inline-block', marginRight: '10px' }}>
+          {mobileScreenshot && <img src={mobileScreenshot} alt="Mobile Screenshot" style={{ maxWidth: '100%', height: 'auto' }} />}
+        </div>
+        <div style={{ display: 'inline-block' }}>
+          {desktopScreenshot && <img src={desktopScreenshot} alt="Desktop Screenshot" style={{ maxWidth: '100%', height: 'auto' }} />}
+        </div>
       </div>
     </div>
   );
