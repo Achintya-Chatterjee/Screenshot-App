@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { screenshotone_API_Key } from '../env';
+const accessKey = process.env.SCREENSHOTONE_API_KEY;
 import styles from './ScreenshotApp.module.css'
 const ScreenshotApp: React.FC = () => {
   const [url, setUrl] = useState('');
